@@ -9,6 +9,8 @@
                 <th>Email</th>
                 <th>Created At</th>
                 <th>Updated At</th>
+                <th>Action</th>
+                
             </tr>
         </thead>
     </table>
@@ -20,13 +22,14 @@ $(function() {
     $('#users-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: '{{ route('getDatatablename') }}',
+        ajax: '{!! route('getDatatablename') !!}',
         columns: [
             { data: 'id', name: 'id' },
             { data: 'name', name: 'name' },
             { data: 'email', name: 'email' },
             { data: 'created_at', name: 'created_at' },
-            { data: 'updated_at', name: 'updated_at' }
+            { data: 'updated_at', name: 'updated_at' },
+            { data: 'action', name: 'action' }
         ]
     });
 });
